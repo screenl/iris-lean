@@ -467,6 +467,15 @@ theorem update_frag_acquire [IsSplitFraction F] :
 
 end heapUpdates
 
--- TODO: Port functors
+section heapViewFunctor
+
+abbrev HeapViewURF (F : COFE.OFunctorPre) : COFE.OFunctorPre :=
+  fun A B _ _ => H (F A B)
+
+-- instance {F} [RFunctor F] : URFunctor (@HeapViewURF H F) where
+--   map := sorry
+
+
+end heapViewFunctor
 
 end HeapView
